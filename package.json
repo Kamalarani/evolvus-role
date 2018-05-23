@@ -23,6 +23,7 @@
   "homepage": "https://github.com/Evolvus/evolvus-role#readme",
   "dependencies": {
     "debug": "^3.1.0",
+    "describe": "^1.2.0",
     "jsonschema": "^1.2.4",
     "mongoose": "^5.1.1"
   },

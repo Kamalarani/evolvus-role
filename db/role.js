@@ -1,4 +1,4 @@
-const debug = require("debug")("evolvus-role:db:role");
+const debug = require("debug")("evolvus-role.test.db.role.test");
 const mongoose = require("mongoose");
 const ObjectId = require('mongodb')
   .ObjectID;

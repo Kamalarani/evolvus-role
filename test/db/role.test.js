@@ -1,19 +1,21 @@
-const debug = require("debug")("evolvus-role.test.db.role.test");
+const debug = require("debug")("evolvus-role.db.role");
 const mongoose = require("mongoose");
 const chai = require("chai");
 const chaiAsPromised = require("chai-as-promised");
 const expect = chai.expect;
 const user = require("../../db/role");
-//const userSchema = require("../../db/userSchema");
+const describe = require("describe");
+const roleSchema = require("../../db/roleSchema");
 
-var MONGO_DB_URL = process.env.MONGO_DB_URL || "mongodb://localhost/Test";
+var MONGO_DB_URL = process.env.MONGO_DB_URL || "mongodb://localhost/TestRole";
 
 chai.use(chaiAsPromised);
 
-//var User = mongoose.model("User", userSchema);
+//var Role = mongoose.model("Role", roleSchema);
 // High level wrapper
 // Testing db/user.js
-describe("Role testing", () => {
+
+  describe("Role testing", () => {
 
   /*
    ** Before doing any tests, first get the connection.
@@ -29,9 +31,9 @@ describe("Role testing", () => {
 
   describe("testing role.saveRole", () => {
     // Testing save
-    // 1. Valid user should be saved.
-    // 2. Non user object should not be saved.
-    // 3. Should not save same user twice.
+    // 1. Valid role should be saved.
+    // 2. Non role object should not be saved.
+    // 3. Should not save same role twice.
     beforeEach((done) => {
       role.deleteAll()
         .then((data) => {
@@ -39,7 +41,7 @@ describe("Role testing", () => {
         });
     });
 
-    it("should save valid roleId to database", (done) => {
+    it("should save valid role to database", (done) => {
       let testRole = {
         "roleId": 1,
         "roleName": "System",
@@ -52,7 +54,7 @@ describe("Role testing", () => {
     });
 
     it("should fail saving invalid object to database", (done) => {
-      // not even a user object
+
       let testObject = {
         "sample": "Role"
       };

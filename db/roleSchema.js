@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+/*var schema = require("jsonschema");
 schema
   .is()
   .min(8)
@@ -13,11 +14,11 @@ schema
   .digits()
   .has()
   .not()
-  .spaces();
+  .spaces();*/
 
 var roleSchema = new mongoose.Schema({
   roleId: {
-    type: Integer,
+    type: Number,
     required: true,
     trim: true,
     minlength: 1,
@@ -28,20 +29,9 @@ var roleSchema = new mongoose.Schema({
     required: true,
     trim: true,
     minlength: 1,
-    maxlength: 100
+    maxlength: 100,
     unique: true
     }
-  },
-  tokens: [{
-    access: {
-      type: String,
-      required: true
-    },
-    token: {
-      type: String,
-      required: true
-    }
-  }]
-});
+  });
 
 module.exports = roleSchema;
