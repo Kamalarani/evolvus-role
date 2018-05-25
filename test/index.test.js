@@ -1,4 +1,4 @@
-const debug = require("debug")("evolvus-role.db.index");
+const debug = require("debug")("evolvus-role.test.index.test");
 const mongoose = require("mongoose");
 const chai = require("chai");
 const chaiAsPromised = require("chai-as-promised");

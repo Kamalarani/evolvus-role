@@ -21,6 +21,7 @@ module.exports.saveRole = (object) => {
       // in any case it does not save, is a reject
       role.saveRole()
         .then((data) => {
+          console.log(data);
           debug("saved successfully", data._id);
           resolve(data);
         }, (err) => {
